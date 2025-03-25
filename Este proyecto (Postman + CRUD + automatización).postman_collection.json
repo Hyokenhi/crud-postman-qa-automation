@@ -1,0 +1,205 @@
+{
+	"info": {
+		"_postman_id": "f7c1ef6f-2d17-46ec-b55c-7f588f18c978",
+		"name": "Este proyecto (Postman + CRUD + automatización)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43463581",
+		"_collection_link": "https://cristiandelgado-1454420.postman.co/workspace/Cristian-Delgado's-Workspace~b40b2fff-265c-4278-860d-1652170a6619/collection/43463581-f7c1ef6f-2d17-46ec-b55c-7f588f18c978?action=share&source=collection_link&creator=43463581"
+	},
+	"item": [
+		{
+			"name": "https://reqres.in/api/users\n",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var responseData = pm.response.json();\r",
+							"\r",
+							"pm.environment.set(\"user_id\", responseData.id);\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Cristian\",\r\n    \"job\": \"QA Engineer\"\r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://reqres.in/api/users\n",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users\n"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://reqres.in/api/users{{user_id}}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código 200 OK\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"let data = pm.response.json();\r",
+							"\r",
+							"\r",
+							"pm.test(\"La respuesta contiene el campo 'data'\", function () {\r",
+							"    pm.expect(data).to.have.property('data');\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/api/users{{user_id}}",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users{{user_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://reqres.in/api/users/{{user_id}}\n",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código 200 actualizado\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"let data = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Validar datos actualizados\", function () {\r",
+							"    pm.expect(data.name).to.eql(\"Cristian Delgado\");\r",
+							"    pm.expect(data.job).to.eql(\"QA Automation Engineer\");\r",
+							"});\r",
+							"\r",
+							"console.log(\"Usuario actualizado:\", data.name, \"-\", data.job);\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Cristian Delgado\",\r\n  \"job\": \"QA Automation Engineer\",\r\n  \"Email\": \"QACris@email.com\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://reqres.in/api/users/{{user_id}}\n",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users",
+						"{{user_id}}\n"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://reqres.in/api/users/{{user_id}}\n",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código 204 - Usuario eliminado correctamente\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Respuesta sin cuerpo\", function () {\r",
+							"    pm.expect(pm.response.text()).to.eql('');\r",
+							"});\r",
+							"\r",
+							"console.log(\"Usuario con ID\", pm.environment.get(\"user_id\"), \"eliminado.\");\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/api/users/{{user_id}}\n",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users",
+						"{{user_id}}\n"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
