@@ -1,8 +1,8 @@
-# Proyecto QA - CRUD Automatizado con Postman 💻🧪
+# Proyecto QA - CRUD Automatizado con Postman
 
 Este es un proyecto práctico donde se automatiza un flujo completo de operaciones CRUD sobre una API REST usando **Postman**. Incluye pruebas automáticas, uso de variables, ejecución encadenada con el Runner y documentación.
 
-## ✨ ¿Qué incluye?
+## ¿Qué incluye?
 
 - [x] Crear usuario (`POST`)
 - [x] Consultar usuario por ID (`GET`)
@@ -12,18 +12,18 @@ Este es un proyecto práctico donde se automatiza un flujo completo de operacion
 - [x] Pruebas automáticas con scripts
 - [x] Ejecución completa con el Runner de Postman
 
-## 🔧 Herramientas
+##  Herramientas
 
 - Postman v10+
 - API pública: [reqres.in](https://reqres.in)
 - JavaScript (scripts de test)
 - GitHub
 
-## 📂 Archivo incluido
+##  Archivo incluido
 
 - `crud-postman-collection.json`: colección completa lista para importar en Postman
 
-## ▶️ ¿Cómo usarlo?
+##  ¿Cómo usarlo?
 
 1. Clona o descarga este repositorio
 2. Abre Postman
@@ -32,11 +32,11 @@ Este es un proyecto práctico donde se automatiza un flujo completo de operacion
 5. Ejecuta las peticiones en orden o usa el Runner
 6. ¡Listo!
 
-## 📌 Nota sobre la API
+##  Nota sobre la API
 
 `reqres.in` no persiste los usuarios creados con POST, por lo tanto, en las pruebas GET posteriores puede que el usuario no exista realmente. Los scripts están adaptados para manejar esa situación.
 
-## 👤 Autor
+##  Autor
 
 **Cristian Camilo Delgado**  
 Desarrollador en formación | QA & Automatización  
