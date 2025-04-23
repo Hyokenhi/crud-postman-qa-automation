@@ -29,11 +29,8 @@ crud-postman-qa-automation/
 │   ├── crud-api-tests.json        # Postman Collection for CRUD operations
 │   └── report/                    # Newman HTML Report
 │
-├── node_modules/                  # Node modules for Newman and other dependencies
-├── .gitignore                     # Git ignore file
 ├── README.md                      # This file
-├── package-lock.json              # NPM lock file for dependencies
-└── package.json                   # NPM configuration file
+
 ```
 
 ---
