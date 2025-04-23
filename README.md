@@ -1,5 +1,5 @@
 
-# CRUD Postman QA Automation 🚀
+# CRUD Postman QA Automation 
 
 **`crud-postman-qa-automation`** is an automated testing project designed to validate CRUD (Create, Read, Update, Delete) operations using **Postman** and **Newman**. This project focuses on automating API tests to ensure that the application's backend services function correctly for all basic data operations, while integrating reporting for easy tracking.
 
