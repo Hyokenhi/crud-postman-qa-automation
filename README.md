@@ -54,7 +54,7 @@ See it under the [Actions](https://github.com/Hyokenhi/crud-postman-qa-automatio
 🚀 Passionate about automation and continuous learning, seeking a career in QA Automation.  
 💡 Committed to improving software quality through disciplined, efficient, and effective testing practices.
 
-📬 Contact: [LinkedIn](https://www.linkedin.com/in/Hyokenhi/) | GitHub: [@Crisweisk](https://github.com/Hyokenhi)
+📬 Contact: [LinkedIn](https://www.linkedin.com/in/Hyokenhi/) | GitHub: [@Hyokenhi](https://github.com/Hyokenhi)
 
 ---
 
